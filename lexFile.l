@@ -71,9 +71,9 @@ return			return(RETURN);
 \'(\\.|[^\\'])+\'			{strcpy(yylval.str, yytext);
 							return(CHR_LTRL);
 							}
-alphanumeric	{strcpy(yylval.str, yytext);
-				return(IDNTF);
-				}
+{alphabetic}({alphanumeric}|_)*	{strcpy(yylval.str, yytext);
+								return(IDNTF);
+								}
 
 ";"				return(SEMICOLON);
 "{"				return(LEFT_BRACKET);
