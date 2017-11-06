@@ -84,7 +84,10 @@ return			return(RETURN);
 ")"				return(RIGHT_PARANTHESIS);
 "["				return(LEFT_SQ_BRACKET);
 "]"				return(RIGHT_SQ_BRACKET);
-(\r|\n|\r\n)	return(NEW_LINE);
-[ \t\v\f]+		return(WHITE_SPACE);
+(\r|\n|\r\n)	{extern int lineno;
+				lineno++;
+				return(NEW_LINE);
+				}
+[ \t\v\f]+		;
 .				return(UNKNOWN_CHAR);
 %%
