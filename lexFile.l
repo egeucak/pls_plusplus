@@ -31,7 +31,7 @@ for				return(FOR);
 function		return(FUNCTION);
 return			return(RETURN);
 
-"print"			return(PRINT);
+"print"			return(BLTIN_PRINT);
 
 "<="			return(LESSEQ_OPT);
 ">="			return(GREATEREQ_OPT);
