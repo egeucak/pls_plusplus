@@ -59,21 +59,11 @@ return			return(RETURN);
 "-"				return(SUB_OPT);
 "^"				return(POW_OPT);
 
-{sign}?{digit}+				{sscanf(yytext, "%d", &yylval.integer);
-							return(INT_LTRL);
-							}
-{sign}?{digit}*"."{digit}+	{sscanf(yytext, "%lf", &yylval.real);
-							return(FLT_LTRL);
-							}
-\"(\\.|[^\\"])*\"			{strcpy(yylval.str, yytext);
-							return(STR_LTRL);
-							}
-\'(\\.|[^\\'])+\'			{strcpy(yylval.str, yytext);
-							return(CHR_LTRL);
-							}
-{alphabetic}({alphanumeric}|_)*	{strcpy(yylval.str, yytext);
-								return(IDNTF);
-								}
+{sign}?{digit}+				return(INT_LTRL);
+{sign}?{digit}*"."{digit}+	return(FLT_LTRL);
+\"(\\.|[^\\"])*\"			return(STR_LTRL);
+\'(\\.|[^\\'])+\'			return(CHR_LTRL);
+{alphabetic}({alphanumeric}|_)*	return(IDNTF);
 
 ";"				return(SEMICOLON);
 "{"				return(LEFT_BRACKET);
@@ -85,7 +75,7 @@ return			return(RETURN);
 "["				return(LEFT_SQ_BRACKET);
 "]"				return(RIGHT_SQ_BRACKET);
 (\r|\n|\r\n)	{extern int lineno;
-				lineno++;
+				alalineno++;
 				return(NEW_LINE);
 				}
 [ \t\v\f]+		;
