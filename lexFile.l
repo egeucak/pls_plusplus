@@ -9,6 +9,10 @@ bool			return(BOOL);
 void			return(VOID);
 char			return(CHAR);
 array			return(ARRAY);
+file			return(FILE);
+dir				return(DIR);
+cloud			return(CLOUD);
+string			return(STRING);
 
 false			return(BLN_FALSE);
 true			return(BLN_TRUE);
@@ -31,7 +35,22 @@ for				return(FOR);
 function		return(FUNCTION);
 return			return(RETURN);
 
-"print"			return(BLTIN_PRINT);
+"pls_print"			return(BLTIN_PRINT);
+"pls_open"			return(BLTIN_OPEN);
+"pls_write"			return(BLTIN_WRITE);
+"pls_delete"		return(BLTIN_DEL);
+"pls_compare"		return(BLTIN_COMPARE);
+"pls_listContents"	return(BLTIN_LISTCONT);
+"pls_sortDir"		return(BLTIN_SORTD);
+"pls_getSize"		return(BLTIN_GETSIZE);
+"pls_getType"		return(BLTIN_GETTYPE);
+"pls_close"			return(BLTIN_CLOSE);
+"pls_connect"		return(BLTIN_CONNECT);
+"pls_disconnect"	return(BLTIN_DISCONNECT);
+"pls_check"			return(BLTIN_CHECK);
+"pls_synchronize"	return(BLTIN_SYNC);
+"pls_download"		return(BLTIN_DOWNL);
+"pls_upload"		return(BLTIN_UPL);
 
 "<="			return(LESSEQ_OPT);
 ">="			return(GREATEREQ_OPT);
