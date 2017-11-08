@@ -1,3 +1,9 @@
+%{
+	
+#include <stdio.h>
+#include "y.tab.c"
+
+%}
 alphabetic		[A-Za-z]
 digit 			[0-9]
 sign			[\-+]
@@ -9,9 +15,8 @@ bool			return(BOOL);
 void			return(VOID);
 char			return(CHAR);
 array			return(ARRAY);
-file			return(FILE);
-dir				return(DIR);
-cloud			return(CLOUD);
+file			return(FILETYPE);
+dir				return(DIRTYPE);
 string			return(STRING);
 
 false			return(BLN_FALSE);
@@ -93,10 +98,7 @@ return			return(RETURN);
 ")"				return(RIGHT_PARANTHESIS);
 "["				return(LEFT_SQ_BRACKET);
 "]"				return(RIGHT_SQ_BRACKET);
-(\r|\n|\r\n)	{extern int lineno;
-				alalineno++;
-				return(NEW_LINE);
-				}
+(\r|\n|\r\n)	return(NEW_LINE);
 [ \t\v\f]+		;
 .				return(UNKNOWN_CHAR);
 %%
