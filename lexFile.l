@@ -1,6 +1,5 @@
 %{
 	
-#include <stdio.h>
 #include "y.tab.c"
 
 %}
@@ -89,8 +88,8 @@ return			return(RETURN);
 \"(\\.|[^\\"])*\"			return(STR_LTRL);
 \'(\\.|[^\\'])+\'			return(CHR_LTRL);
 {alphabetic}({alphanumeric}|_)*	return(IDNTF);
-"//"(.*[ \t]*.*)*[\n]+		;
-"/*"(.*[ \t]*.*)*"*/"[\n]+	;
+"//"(.*[ \t]*)*[\n]+		;
+"/*"(.*[ \t]*[\n]*)*"*/"	;
 
 ";"				return(SEMICOLON);
 "{"				return(LEFT_BRACKET);
@@ -104,5 +103,8 @@ return			return(RETURN);
 
 (\r|\n|\r\n)	;
 [ \t\v\f]+		;
+<<EOF>>			{
+				yyterminate();
+				}
 .				return(UNKNOWN_CHAR);
 %%

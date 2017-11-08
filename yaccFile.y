@@ -53,8 +53,7 @@ RHS: arithmetic_expression
 		| function_call
 		| boolean_expression
 		;
-function_call: BLTIN_UPL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
-		| BLTIN_PRINT LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
+function_call: BLTIN_PRINT LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_OPEN LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_WRITE LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_DEL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
@@ -69,13 +68,21 @@ function_call: BLTIN_UPL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_CHECK LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_SYNC LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_DOWNL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
+		| BLTIN_UPL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		;
-
 identifier_list: empty 
 		| IDNTF 
+		| LEFT_PARANTHESIS IDNTF RIGHT_PARANTHESIS
 		| identifier_list COMMA IDNTF
+		| identifier_list COMMA LEFT_PARANTHESIS IDNTF RIGHT_PARANTHESIS
 		| factor
+		| LEFT_PARANTHESIS factor RIGHT_PARANTHESIS
 		| identifier_list COMMA factor
+		| identifier_list COMMA LEFT_PARANTHESIS factor RIGHT_PARANTHESIS
+		| STRING
+		| LEFT_PARANTHESIS STRING RIGHT_PARANTHESIS
+		| identifier_list COMMA STRING
+		| identifier_list COMMA LEFT_PARANTHESIS STRING RIGHT_PARANTHESIS
 		;
 arithmetic_expression: term
 		| arithmetic_expression ADD_OPT term
@@ -189,7 +196,6 @@ int main(void) {
     }
     return 0;
 }
-
 void yyerror(char *s) {
     fprintf(stderr, "line %d: %s\n", yylineno, s);
 }
