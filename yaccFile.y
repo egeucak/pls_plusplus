@@ -182,7 +182,7 @@ empty: /* empty */
 
 
 int main(void) {
-    //yyparse();
+    yyparse();
     printf("Syntax is Correct\n");
     return 0;
 }
