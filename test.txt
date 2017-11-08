@@ -1,0 +1,155 @@
+function int main(void) {
+    // this isa li          ne      commen      t
+    /*  this is sparta*/
+    /*  this is
+        a block
+        comment
+        nonexistant_function(something)
+    */
+    int i = 2;
+    i =+ 3;
+    i =- 2;
+    i =* 5;
+    i =/ 6;
+    i =^ 7;
+    i =% 2;
+    
+    i = 3 + 5;
+    i = 4 - 6;
+    i = 5 * 2;
+    i = 7 / 8;
+    i = 3 ^ 6;
+    i = 10 % 2;
+    
+    i++;
+    i--;
+    
+    if(i < 5) {
+        pls_print("i is less than 5");
+    }
+
+    if(i > 5) {
+        pls_print("i is greater than 5");
+    }
+    
+    if(i <= 5) {
+        pls_print("i is less than or equal to 5");
+    }
+    
+    if(i >= 5) {
+        pls_print("i is greater than or equal to 5");
+    }
+    
+    if(i == 5) {
+        pls_print("i is 5");
+    }
+    
+    if(i != 5) {
+        pls_print("i is not 5");
+    }
+    
+    array int arr1[6] = {1, 2, 3, 4, 5, 6};
+    
+    for(int j = 0; j < 6; j++) {
+        pls_print("%d\n", j);
+    }
+    
+    i = 0;
+    
+    while(i < 6) {
+        if(i < 4) {
+            break;
+        }
+        
+        if(i == 3) {
+            continue;
+        }
+        
+        pls_print("%d\n", i);
+        i++;
+    }
+    
+    i = 0;
+    
+    do {
+        pls_print("%d\n", i);
+        i++;
+    } while(i < 6);
+    
+    i = 0;
+    
+    while(i < 6) {
+        switch(arr1[i]) {
+            case 1:
+                pls_print("%d. element is 1", i);
+                break;
+            case 2:
+                pls_print("%d. element is 1", i);
+                break;            
+            case 3:
+                pls_print("%d. element is 1", i);
+                break;
+            case 4:
+                pls_print("%d. element is 1", i);
+                break;
+            case 5:
+                pls_print("%d. element is 1", i);
+                break;
+            case 6:
+                pls_print("%d. element is 1", i);
+                break;
+            default:
+                pls_print("I don't know the element");
+        }
+        
+        i++;
+    }
+    
+    i = 4;
+    int j = 6;
+    
+    if(i == 4 && j == 6) {
+        pls_print("i is 4 and j is 6");
+    }
+    
+    if(i == 4 || j == 6) {
+        pls_print("i is 4 or j is 6");
+    }
+    
+    char c = 'c';
+    
+    float a = 5.44;
+    float b = -23.56;
+
+    bool d = true;
+    bool e = !d;
+
+    if(!e){
+        pls_print("bool expressions work!");    
+    }
+    
+    return 0;
+
+pls_print("bu da benim kodum hüsnü");
+dosya = pls_open("path.txt");
+klasor = pls_open("path");
+pls_write(dosya,"ilk yorum");
+pls_delete(dosya);
+pls_delete(klasor);
+pls_compare(dosya,dosya2);
+pls_listContents(klasor);
+pls_sortDir(klasor,"date");
+pls_getSize(dosya);
+pls_getType(dosya);
+pls_close(dosya);
+pls_close(klasor);
+root = pls_connect(googledrive);
+pls_disconnect(root);
+pls_check("path2");
+pls_check();
+pls_synchronize();
+pls_download(root,"path.jpg");
+pls_upload(root,"path.avi");
+pls_synchronize("path2",(deneme));
+pls_synchronize(("path2"),deneme);
+pls_synchronize(("path2"),(deneme));
