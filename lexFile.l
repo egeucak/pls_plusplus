@@ -4,6 +4,7 @@
 #include "y.tab.c"
 
 %}
+%option yylineno
 alphabetic		[A-Za-z]
 digit 			[0-9]
 sign			[\-+]
@@ -88,6 +89,8 @@ return			return(RETURN);
 \"(\\.|[^\\"])*\"			return(STR_LTRL);
 \'(\\.|[^\\'])+\'			return(CHR_LTRL);
 {alphabetic}({alphanumeric}|_)*	return(IDNTF);
+"//"(.*[ \t]*.*)*[\n]+		;
+"/*"(.*[ \t]*.*)*"*/"[\n]+	;
 
 ";"				return(SEMICOLON);
 "{"				return(LEFT_BRACKET);
@@ -98,7 +101,8 @@ return			return(RETURN);
 ")"				return(RIGHT_PARANTHESIS);
 "["				return(LEFT_SQ_BRACKET);
 "]"				return(RIGHT_SQ_BRACKET);
-(\r|\n|\r\n)	return(NEW_LINE);
+
+(\r|\n|\r\n)	;
 [ \t\v\f]+		;
 .				return(UNKNOWN_CHAR);
 %%

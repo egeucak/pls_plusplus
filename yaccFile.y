@@ -182,8 +182,12 @@ empty: /* empty */
 
 
 int main(void) {
-    yyparse();
-    printf("Syntax is Correct\n");
+    if(yyparse()==0){
+    	printf("Can compile successfully\n");
+    }
+    else {
+    	printf("Syntax Error\n");
+    }
     return 0;
 }
 
