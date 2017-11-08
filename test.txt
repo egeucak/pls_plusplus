@@ -130,7 +130,7 @@ function int main(void) {
     
     return 0;
 
-pls_print("bu da benim kodum hüsnü");
+pls_print("bu da benim kodum hüs***++nü");
 dosya = pls_open("path.txt");
 klasor = pls_open("path");
 pls_write(dosya,"ilk yorum");
@@ -143,13 +143,12 @@ pls_getSize(dosya);
 pls_getType(dosya);
 pls_close(dosya);
 pls_close(klasor);
-root = pls_connect(googledrive);
+root = pls_connect("ftp://pentagon.com");
 pls_disconnect(root);
-pls_check("path2");
-pls_check();
-pls_synchronize();
+pls_check(root,"path2");
+pls_check(root);
+pls_synchronize(root);
+pls_synchronize(root,"filepath");
 pls_download(root,"path.jpg");
 pls_upload(root,"path.avi");
-pls_synchronize("path2",(deneme));
-pls_synchronize(("path2"),deneme);
-pls_synchronize(("path2"),(deneme));
+
