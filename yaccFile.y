@@ -53,7 +53,7 @@ RHS: arithmetic_expression
 		| function_call
 		| boolean_expression
 		;
-function_call: IDNTF LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
+function_call: BLTIN_UPL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_PRINT LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_OPEN LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_WRITE LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
@@ -69,7 +69,6 @@ function_call: IDNTF LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_CHECK LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_SYNC LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		| BLTIN_DOWNL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
-		| BLTIN_UPL LEFT_PARANTHESIS identifier_list RIGHT_PARANTHESIS
 		;
 
 identifier_list: empty 
