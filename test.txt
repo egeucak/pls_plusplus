@@ -149,7 +149,7 @@ pls_check(root,"path2");
 pls_check(root);
 pls_synchronize(root);
 pls_synchronize(root,"filepath");
-pls_download(root,"path.jpg");
+pls_download(root,"Half-Life 3");
 pls_upload(root,"path.avi");
 
     return 0;
