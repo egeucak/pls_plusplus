@@ -19,10 +19,8 @@ function int main(void) {
     i = 5 * 2;
     i = 7 / 8;
     i = 3 ^ 6;
-    i = 3 ** 6;
     i = 10 % 2;
-    i = 10 * 4 + 7 * 6 ** 3;    
-
+    
     i++;
     i--;
     
@@ -130,9 +128,11 @@ function int main(void) {
         pls_print("bool expressions work!");    
     }
 
+int j = 8 * 12 + 7 * 7 ** 3;
+
 pls_print("bu da benim kodum hüs***++nü");
-dosya = pls_open("path.txt");
-klasor = pls_open("path");
+file dosya = pls_open("path.txt");
+dir klasor = pls_open("path");
 pls_write(dosya,"ilk yorum");
 pls_delete(dosya);
 pls_delete(klasor);
@@ -150,7 +150,7 @@ pls_check(root,"path2");
 pls_check(root);
 pls_synchronize(root);
 pls_synchronize(root,"filepath");
-pls_download(root,"Half-Life 3");
+pls_download(root,"path.jpg");
 pls_upload(root,"path.avi");
 
     return 0;
