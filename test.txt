@@ -128,8 +128,6 @@ function int main(void) {
         pls_print("bool expressions work!");    
     }
     
-    return 0;
-
 pls_print("bu da benim kodum hüs***++nü");
 dosya = pls_open("path.txt");
 klasor = pls_open("path");
@@ -152,3 +150,5 @@ pls_synchronize(root,"filepath");
 pls_download(root,"path.jpg");
 pls_upload(root,"path.avi");
 
+    return 0;
+}
