@@ -1,4 +1,4 @@
-%token INT FLOAT BOOL VOID CHAR ARRAY FILETYPE DIRTYPE STRING
+%token INT FLOAT BOOL VOID CHAR ARRAY FILETYPE DIRTYPE
 %token BLN_FALSE BLN_TRUE
 %token AND_OPT OR_OPT
 %token IF ELSE SWITCH CASE DEFAULT
@@ -171,12 +171,14 @@ case_statement: CASE IDNTF COLON statement_list
 		| CASE factor COLON statement_list
 		| case_statement CASE IDNTF COLON statement_list
 		| case_statement CASE factor COLON statement_list
-	    	| case_statement DEFAULT COLON statement_list
+	    | case_statement DEFAULT COLON statement_list
 		;
 data_type: CHAR 
 		| INT 
 		| FLOAT 
 		| BOOL
+		| FILETYPE
+		| DIRTYPE
 		;
 empty: /* empty */
 		;
