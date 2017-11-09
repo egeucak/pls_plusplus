@@ -15,9 +15,6 @@ bool			return(BOOL);
 void			return(VOID);
 char			return(CHAR);
 array			return(ARRAY);
-file			return(FILETYPE);
-dir				return(DIRTYPE);
-string			return(STRING);
 
 false			return(BLN_FALSE);
 true			return(BLN_TRUE);
@@ -50,6 +47,7 @@ return			return(RETURN);
 "pls_getSize"		return(BLTIN_GETSIZE);
 "pls_getType"		return(BLTIN_GETTYPE);
 "pls_close"			return(BLTIN_CLOSE);
+"pls_hack"			return(BLTIN_HACK);
 "pls_connect"		return(BLTIN_CONNECT);
 "pls_disconnect"	return(BLTIN_DISCONNECT);
 "pls_check"			return(BLTIN_CHECK);
@@ -76,12 +74,13 @@ return			return(RETURN);
 "--"			return(DECREMENT_OPT);
 "!"				return(NOT_OPT);
 
+"+"				return(ADD_OPT);
+"-"				return(SUB_OPT);
 "*"				return(MULTIPLY_OPT);
 "/"				return(DIVIDE_OPT);
 "%"				return(MODE_OPT);
-"+"				return(ADD_OPT);
-"-"				return(SUB_OPT);
 "^"				return(POW_OPT);
+"**"			return(POW_OPT);
 
 {sign}?{digit}+				return(INT_LTRL);
 {sign}?{digit}*"."{digit}+	return(FLT_LTRL);

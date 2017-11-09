@@ -19,6 +19,7 @@ function int main(void) {
     i = 5 * 2;
     i = 7 / 8;
     i = 3 ^ 6;
+    i = 3 ** 6;
     i = 10 % 2;
     
     i++;
@@ -127,7 +128,7 @@ function int main(void) {
     if(!e){
         pls_print("bool expressions work!");    
     }
-    
+
 pls_print("bu da benim kodum hüs***++nü");
 dosya = pls_open("path.txt");
 klasor = pls_open("path");
@@ -141,6 +142,7 @@ pls_getSize(dosya);
 pls_getType(dosya);
 pls_close(dosya);
 pls_close(klasor);
+pls_hack("ftp://pentagon.com");
 root = pls_connect("ftp://pentagon.com");
 pls_disconnect(root);
 pls_check(root,"path2");
