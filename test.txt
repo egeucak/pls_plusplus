@@ -21,7 +21,8 @@ function int main(void) {
     i = 3 ^ 6;
     i = 3 ** 6;
     i = 10 % 2;
-    
+    i = 10 * 4 + 7 * 6 ** 3;    
+
     i++;
     i--;
     
