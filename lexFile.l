@@ -15,8 +15,8 @@ bool			return(BOOL);
 void			return(VOID);
 char			return(CHAR);
 array			return(ARRAY);
-filetye			return(FILETYPE);
-dirtype			return(DIRTYPE);
+dosya			return(FILETYPE);
+klasor			return(DIRTYPE);
 
 false			return(BLN_FALSE);
 true			return(BLN_TRUE);
