@@ -79,8 +79,7 @@ return			return(RETURN);
 "*"				return(MULTIPLY_OPT);
 "/"				return(DIVIDE_OPT);
 "%"				return(MODE_OPT);
-"^"				return(POW_OPT);
-"**"			return(POW_OPT);
+"^"|"**"		return(POW_OPT);
 
 {sign}?{digit}+				return(INT_LTRL);
 {sign}?{digit}*"."{digit}+	return(FLT_LTRL);
@@ -102,8 +101,5 @@ return			return(RETURN);
 
 (\r|\n|\r\n)	;
 [ \t\v\f]+		;
-<<EOF>>			{
-				yyterminate();
-				}
 .				return(UNKNOWN_CHAR);
 %%
