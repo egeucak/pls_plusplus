@@ -1,2 +1,3 @@
-# BBM301-Assignment
-SERHAT İBNESİNE KURBAN OL SEN AMK VELEDİ
+# pls++, A Lexical Analyzer
+
+A project done for BBM301 course at Hacettepe University Computer Science Department
